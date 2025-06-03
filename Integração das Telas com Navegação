@@ -1,0 +1,21 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
+import Login from './screens/Login';
+import Home from './screens/Home';
+import Cadastro from './screens/Cadastro';
+import Progresso from './screens/Progresso';
+
+const Tab = createBottomTabNavigator();
+
+export default function App() {
+  return (
+    <NavigationContainer>
+      <Tab.Navigator>
+        <Tab.Screen name="Login" component={Login} />
+        <Tab.Screen name="Tarefas" component={Home} />
+        <Tab.Screen name="Nova Tarefa" component={Cadastro} />
+        <Tab.Screen name="Progresso" component={Progresso} />
+      </Tab.Navigator>
+    </NavigationContainer>
+  );
+}
