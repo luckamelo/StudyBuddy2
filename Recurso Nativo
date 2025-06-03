@@ -1,0 +1,14 @@
+import { Share, Button } from 'react-native';
+
+const compartilharApp = async () => {
+  try {
+    await Share.share({
+      message: 'Use o StudyBuddy para organizar seus estudos! 📚',
+    });
+  } catch (error) {
+    alert(error.message);
+  }
+};
+
+// Uso:
+<Button title="Compartilhar App" onPress={compartilharApp} />
