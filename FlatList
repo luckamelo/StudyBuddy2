@@ -1,0 +1,21 @@
+import { FlatList, Text, View } from 'react-native';
+
+const materias = [
+  { id: '1', nome: 'Matemática' },
+  { id: '2', nome: 'História' },
+  { id: '3', nome: 'Português' },
+];
+
+export default function ListaMaterias() {
+  return (
+    <View>
+      <FlatList
+        data={materias}
+        keyExtractor={item => item.id}
+        renderItem={({ item }) => (
+          <Text style={{ padding: 10 }}>{item.nome}</Text>
+        )}
+      />
+    </View>
+  );
+}
